@@ -7,6 +7,12 @@ class AppState extends EventEmitter {
   values = []
   todosList = []
   activeTodo = null
+  activeQuote = null
+  activeBackground = null;
+  currentTime = ""
+  currentDate = ""
+  maxTasks = 8
+  quoteTimer = 60
 
   currentWeather = null
   currentWeatherType = "K"

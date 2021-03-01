@@ -66,6 +66,61 @@
   user-select: none;
 }
 
+.centered {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -30%);
+  text-align: center;
+}
+
+.title-font {
+  font-size: 80px;
+}
+
+.author-font {
+  font-size: 50px;
+}
+
+.quote-author {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.quote:hover .quote-author {
+  visibility: visible;
+  display: block;
+  opacity: 1;
+  transition: all 0.5s linear;
+}
+
+.weather-shadow {
+  filter: drop-shadow(10px 10px 4px black)
+}
+
+@supports (-webkit-text-stroke: 1px black) {
+  .stroke {
+    -webkit-text-stroke: 4px black;
+    -webkit-text-fill-color: white;
+  }
+
+  .stroke-sm {
+    -webkit-text-stroke: 1px black;
+  }
+}
+
+.todo-card {
+  background-color: rgba(119, 119, 119, 0.9);
+  opacity: 0.9;
+  padding: 5%;
+  border-radius: 10%;
+  border: 6px solid black;
+}
+
+.progress-bar {
+  max-width: 30%;
+}
+
 *,
 *::before,
 *::after {

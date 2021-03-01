@@ -12,35 +12,52 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
-            <a class="navbar-brand" href="#">
-                <img src="assets/img/logo.png" width="45" height="45" alt="" loading="lazy">
-                <span class="ml-2">inspire-checkpoint</span>
-            </a>
-        </nav>
-    </header>
-    <main class="main-bg-img container-fluid">
-        <div id="app">
-            <div class="row">
-                <div class="col-9"></div>
-                <div class="col-3" id="weather-app"></div>
+    <main class="container-fluid no-select" id="app">
+        <div class="row">
+            <div class="col offset-3">
+                <div id="date" class="text-center"></div>
             </div>
-            <div class="row align-items-end">
-                <div class="col-8"></div>
-                <div class="col-4 pr-0" id="todos-list"></div>
+            <div class="col-3 text-right stroke-sm text-white" id="weather-app"></div>
+        </div>
+        <div class="row centered">
+            <div class="col-12">
+
+                <div id="clock"></div>
+                <h1 class="title-font stroke">Hello, Chris</h1>
+            </div>
+        </div>
+        <div class="row fixed-bottom">
+            <div class="col-2 align-self-end">
+                <button class="btn btn-muted text-primary" onclick="app.backgroundController.getBackground()">Change
+                    background</button>
+            </div>
+            <div class="col-6 offset-1 stroke-sm text-white text-center align-self-end">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" id="quote-progress"
+                        role="progressbar">
+                        <h5 id="timer"></h5>
+                    </div>
+                </div>
+                <div id="quotes"></div>
+            </div>
+
+            <div class="col-3 ml-auto pr-5 pb-2 text-center">
+                <div id="todos-list" class="todo-card"></div>
             </div>
         </div>
     </main>
-    <footer class="container-fluid bg-dark text-light">
-        <div class="row text-center">
-            <div class="col">
-                <p><small>Made with love by Codeworks</small></p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 
     <script src="app/main.js" type="module"></script>
 </body>
