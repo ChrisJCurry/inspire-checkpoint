@@ -7,10 +7,9 @@ function _drawBackground() {
     template += `<img src=${activeBackground.url}></img>`
     let appElem = document.getElementById("app")
     appElem.style.backgroundImage = `url(${activeBackground.url})`
-    appElem.style.height = "100%";
-    appElem.style.backgroundPosition = "center";
     appElem.style.backgroundRepeat = "no-repeat";
     appElem.style.backgroundSize = "cover";
+    appElem.style.backgroundAttachment = "fixed";
 }
 
 export default class QuotesController {

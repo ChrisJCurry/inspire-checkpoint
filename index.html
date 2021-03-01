@@ -14,25 +14,26 @@
 <body>
     <main class="container-fluid no-select" id="app">
         <div class="row">
-            <div class="col offset-3">
-                <div id="date" class="text-center"></div>
+            <div class="col-12 col-md-6 offset-md-3">
+                <div id="date" class="text-md-center text-center"></div>
             </div>
-            <div class="col-3 text-right stroke-sm text-white" id="weather-app"></div>
+            <div class=" col-12 col-md-3 text-md-right text-center stroke-sm text-white" id="weather-app"></div>
         </div>
         <div class="row centered">
-            <div class="col-12">
+            <div class="col-12 order-xs-1 order-md-2">
 
                 <div id="clock"></div>
                 <h1 class="title-font stroke">Hello, Chris</h1>
             </div>
         </div>
-        <div class="row fixed-bottom">
-            <div class="col-2 align-self-end">
+        <div class="row fixed-md-footer">
+            <div class="col-2 d-none d-md-block align-self-end order-3 order-md-1">
                 <button class="btn btn-muted text-primary" onclick="app.backgroundController.getBackground()">Change
                     background</button>
             </div>
-            <div class="col-6 offset-1 stroke-sm text-white text-center align-self-end">
-                <div class="progress">
+            <div
+                class="col-12 col-md-6 offset-md-1 offset-12 stroke-sm text-white text-center align-self-end order-1 order-md-2">
+                <div class="progress bg-transparent">
                     <div class="progress-bar progress-bar-striped progress-bar-animated" id="quote-progress"
                         role="progressbar">
                         <h5 id="timer"></h5>
@@ -41,7 +42,7 @@
                 <div id="quotes"></div>
             </div>
 
-            <div class="col-3 ml-auto pr-5 pb-2 text-center">
+            <div class="col-9 offset-2 col-md-3 ml-md-auto pr-5 pb-md-2 mt-0 pt-0 text-center order-2 order-md-3">
                 <div id="todos-list" class="todo-card"></div>
             </div>
         </div>

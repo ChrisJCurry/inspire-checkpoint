@@ -4,15 +4,15 @@ import quotesService from '../Services/QuotesService.js'
 function _drawQuotes() {
     let activeQuote = ProxyState.activeQuote;
     if (ProxyState.quoteTimer == 60) {
-        quotesService.quoteTimer()
+        quotesService.startTimer()
     }
     let template = ""
     if (activeQuote != null) {
         template += /*html*/`
         <div class="quote">
-            <h1>${activeQuote.content}</h1>
+            <h3>${activeQuote.content}</h3>
             <div class="quote-author">
-                <h1 class="author-font">~ ${activeQuote.author}</h1>
+                <h2 class="author-font">~ ${activeQuote.author}</h2>
             </div>
         </div>
         `
@@ -27,7 +27,8 @@ function _drawQuotes() {
 
 function _updateTimer() {
     let progElem = document.getElementById("quote-progress")
-    progElem.style.width = `${ProxyState.quoteTimer}%`
+    let updatedVal = ProxyState.quoteTimer * 1.66667
+    progElem.style.width = `${updatedVal.toFixed(0)}%`
     let timerValElem = document.getElementById("timer")
     timerValElem.innerText = ProxyState.quoteTimer
 }

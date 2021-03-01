@@ -66,20 +66,14 @@
   user-select: none;
 }
 
-.centered {
-  position: absolute;
-  left: 50%;
-  top: 40%;
-  transform: translate(-50%, -30%);
-  text-align: center;
-}
+
 
 .title-font {
-  font-size: 80px;
+  font-size: 60px;
 }
 
 .author-font {
-  font-size: 50px;
+  font-size: 40px;
 }
 
 .quote-author {
@@ -109,6 +103,34 @@
   }
 }
 
+/*medium+ screens*/
+@media (min-width: 768px) {
+  .fixed-md-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .centered {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -30%);
+  text-align: center;
+}
+}
+
+/*small screens*/
+@media (max-width: 767px) {
+  .fixed-md-footer {
+    bottom: 0;
+  }
+
+  .centered {
+    text-align: center;
+}
+}
+
 .todo-card {
   background-color: rgba(119, 119, 119, 0.9);
   opacity: 0.9;
@@ -118,8 +140,18 @@
 }
 
 .progress-bar {
-  max-width: 30%;
+  max-width: 100%;
+  transition: width 2s ease!important;
 }
+
+.bottom-test {
+  bottom: 0;
+  width: 100%;
+}
+
+/* *{
+  border: 1px solid red;
+} */
 
 *,
 *::before,

@@ -8,7 +8,7 @@ function _drawTodos() {
         template += /*html*/`
         <div class="bg-primary">
             <form onsubmit="app.todosController.addTodo(event)" class="d-flex">
-                <input type="text" class="form-control squared-borders" required="true" minLength="1" maxLength="30" name="newTodoInput" placeholder="Enter new Todo here..."/>
+                <input type="text" class="form-control squared-borders" required="true" maxLength="25" name="newTodoInput" placeholder="Enter new Todo here..."/>
                 <button class="btn btn-success form-control w-25" type="submit">+</button>
             </form>
         </div>

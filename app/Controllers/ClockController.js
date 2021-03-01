@@ -7,10 +7,7 @@ function _drawClock() {
         results = _getCurrentTime()
         ProxyState.currentTime = results
         let newDay = new Date()
-        //console.log(newDay)
-        if (newDay.getDate == ProxyState.currentDate.getDate) {
-            console.log("same day still")
-        } else {
+        if (newDay.getDate != ProxyState.currentDate.getDate) {
             _getDate()
         }
         let clockElem = document.getElementById("clock")
@@ -35,7 +32,6 @@ function _getDate() {
     let day = _fixLowNumber(d.getDate())
     let year = d.getFullYear()
 
-    console.log(month, day, year)
     ProxyState.currentDate = d
     document.getElementById("date").innerHTML = `<h1 class="title-font text-white stroke">${month}/${day}/${year}</h1>`;
 }

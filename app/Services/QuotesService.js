@@ -2,6 +2,7 @@ import { ProxyState } from '../AppState.js'
 import { sandBoxApi } from './AxiosService.js'
 
 let timerId = "";
+var self = this;
 
 class QuotesService {
 
@@ -18,35 +19,25 @@ class QuotesService {
         }
     }
 
-    quoteTimer() {
-        this.startTimer()
-        setTimeout(this.stopTimer, ProxyState.quoteTimer)
-    }
-
     startTimer() {
-        let timeRemaining = 60;
-        let self = this;
-        console.log(ProxyState.quoteTimer + "hi")
-        this.timerId = setInterval(self.modifyTimer, 1000)
+        this.timerId = setInterval(this.modifyTimer.bind(this), 1000)
+        //uses bind to bind the timerId to the current object. this allows to have multiple ids over a period of time
     }
 
     modifyTimer() {
         let newVal = ProxyState.quoteTimer - 1
-        let self = this;
         if (newVal <= 0) {
-            console.log(newVal)
-            console.log("stopped")
-            this.stopTimer()
+            this.stopTimer(this)
             return;
         }
-        console.log(newVal)
         ProxyState.quoteTimer = newVal
     }
 
     stopTimer() {
-        console.log("got to 0, now erroring out")
-        ProxyState.quoteTimer = 60
-        clearInterval(timerId)
+        //uses this to delete the current timer id, otherwise it goes twice as fast (assuming its not deleting the right ID)
+        clearInterval(this.timerId)
+        ProxyState.quoteTimer = 60 //resets counter
+        this.getQuotes() //calls quotes, so may not be exactly every 60 seconds since it may not connect to a new one by then.
     }
 
 }
